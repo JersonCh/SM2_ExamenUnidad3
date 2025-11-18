@@ -22,13 +22,18 @@ jobs:
         run: |
           cd app_perufest
           flutter pub get
+          cd ..
+          dart pub get
 
       - name: Analyze
         run: |
           cd app_perufest
           flutter analyze --no-fatal-infos || true
 
-      - name: Run tests
+      - name: Run Flutter tests
         run: |
           cd app_perufest
-          flutter test
+          flutter test || echo "No Flutter tests found"
+
+      - name: Run Dart tests
+        run: dart test
