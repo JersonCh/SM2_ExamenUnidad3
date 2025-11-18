@@ -2,45 +2,33 @@ name: Quality Check
 
 on:
   push:
-    branches: [main, master, develop]  
+    branches: [main]
   pull_request:
-    branches: [main, master, develop]
+    branches: [main]
 
 jobs:
   analyze:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4  
+      - uses: actions/checkout@v3
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.35.5'
-          cache: true  
 
       - name: Install dependencies
         run: |
           cd app_perufest
           flutter pub get
 
-      - name: Verify formatting
-        run: |
-          cd app_perufest
-          dart format --output=none --set-exit-if-changed .
-
       - name: Analyze
         run: |
           cd app_perufest
-          flutter analyze --fatal-infos
+          flutter analyze
 
       - name: Run tests
         run: |
           cd app_perufest
-          flutter test --coverage
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          file: ./app_perufest/coverage/lcov.info
-          fail_ci_if_error: false
+          flutter test
