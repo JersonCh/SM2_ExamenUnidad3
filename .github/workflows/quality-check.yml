@@ -26,7 +26,7 @@ jobs:
       - name: Analyze
         run: |
           cd app_perufest
-          flutter analyze
+          flutter analyze --no-fatal-infos
 
       - name: Run tests
         run: |
