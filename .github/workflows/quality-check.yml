@@ -20,19 +20,27 @@ jobs:
           cache: true  
 
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          cd app_perufest
+          flutter pub get
 
       - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed .
+        run: |
+          cd app_perufest
+          dart format --output=none --set-exit-if-changed .
 
       - name: Analyze
-        run: flutter analyze --fatal-infos
+        run: |
+          cd app_perufest
+          flutter analyze --fatal-infos
 
       - name: Run tests
-        run: flutter test --coverage
+        run: |
+          cd app_perufest
+          flutter test --coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          file: ./coverage/lcov.info
+          file: ./app_perufest/coverage/lcov.info
           fail_ci_if_error: false
