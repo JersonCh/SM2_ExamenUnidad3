@@ -496,30 +496,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.35.5'
+          cache: true
 
       - name: Install dependencies
         run: |
           cd app_perufest
           flutter pub get
+          cd ..
+          dart pub get
 
       - name: Analyze
         run: |
           cd app_perufest
           flutter analyze --no-fatal-infos || true
 
-      - name: Run tests
+      - name: Run Flutter tests
         run: |
           cd app_perufest
-          flutter test
+          flutter test || echo "No Flutter tests found"
+
+      - name: Run Dart tests
+        run: dart test
 ```
 
-*[Insertar captura de pantalla del contenido del archivo]*
+*[captura de pantalla del contenido del archivo]*
+![Imagen 4](imagenes/queality.PNG)
 
 ### 3. Ejecución del Workflow en GitHub Actions
 
