@@ -476,9 +476,9 @@ C:.
 ```
 
 *[captura de pantalla de la estructura de carpetas]*
-![Imagen 1](imagenes/imagen1.PNG)
-![Imagen 2](imagenes/imagen2.PNG)
-![Imagen 3](imagenes/imagen3.PNG)
+![Imagen 1](imagenes/imagen1.png)
+![Imagen 2](imagenes/imagen2.png)
+![Imagen 3](imagenes/imagen3.png)
 
 ### 2. Contenido del archivo `quality-check.yml`
 
@@ -526,7 +526,7 @@ jobs:
 ```
 
 *[captura de pantalla del contenido del archivo]*
-![Imagen 4](imagenes/queality.PNG)
+![Imagen 4](imagenes/quality.png)
 
 ### 3. Ejecución del Workflow en GitHub Actions
 
