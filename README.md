@@ -476,9 +476,9 @@ C:.
 ```
 
 *[captura de pantalla de la estructura de carpetas]*
-![Imagen 1](imagenes/imagen1.png)
-![Imagen 2](imagenes/imagen2.png)
-![Imagen 3](imagenes/imagen3.png)
+<img src="imagenes/imagen1.png" alt="Imagen 1" width="600">
+![Imagen 2](./imagenes/imagen2.png)
+![Imagen 3](https://raw.githubusercontent.com/JersonCh/SM2_ExamenUnidad3/main/imagenes/imagen 3.png)
 
 ### 2. Contenido del archivo `quality-check.yml`
 
